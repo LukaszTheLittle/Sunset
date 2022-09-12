@@ -1,5 +1,6 @@
 package com.bignerdranch.android.sunset
 
+import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,7 +8,7 @@ import android.view.View
 class MainActivity : AppCompatActivity() {
 
     private lateinit var sceneView: View
-    private lateinit var sunView: View
+    lateinit var sunView: View
     private lateinit var skyView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,5 +18,16 @@ class MainActivity : AppCompatActivity() {
         sceneView = findViewById(R.id.scene)
         sunView = findViewById(R.id.sun)
         skyView = findViewById(R.id.sky)
+    }
+
+    private fun startAnimation() {
+        val sunYStart = sunView.top.toFloat()
+        val sunYEnd = skyView.height.toFloat()
+
+        val heightAnimator = ObjectAnimator
+            .ofFloat(sunView, "y", sunYStart, sunYEnd)
+            .setDuration(3000)
+
+        heightAnimator.start()
     }
 }
