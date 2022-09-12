@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
         sceneView = findViewById(R.id.scene)
         sunView = findViewById(R.id.sun)
         skyView = findViewById(R.id.sky)
+
+        sceneView.setOnClickListener {
+            startAnimation()
+        }
     }
 
     private fun startAnimation() {
