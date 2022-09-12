@@ -8,7 +8,7 @@ import android.view.View
 class MainActivity : AppCompatActivity() {
 
     private lateinit var sceneView: View
-    lateinit var sunView: View
+    private lateinit var sunView: View
     private lateinit var skyView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
