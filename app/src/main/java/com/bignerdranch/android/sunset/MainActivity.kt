@@ -53,7 +53,10 @@ class MainActivity : AppCompatActivity() {
 
         sunsetSkyAnimator.setEvaluator(ArgbEvaluator())
 
-        heightAnimator.start()
-        sunsetSkyAnimator.start()
+        val nightSkyAnimator = ObjectAnimator
+            .ofInt(skyView, "backgroundColor", sunsetSkyColor, nightSkyColor)
+            .setDuration(1500)
+
+        nightSkyAnimator.setEvaluator(ArgbEvaluator())
     }
 }
